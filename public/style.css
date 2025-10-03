@@ -1,0 +1,456 @@
+/* ===== Global ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    padding: 20px;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 950px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animasi muncul */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2 {
+    text-align: center;
+    color: #49939e;
+    margin-bottom: 20px;
+}
+
+/* ===== Form Input ===== */
+#siswa-form, #guru-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+#siswa-form input,
+#siswa-form select,
+#siswa-form button,
+#guru-form input,
+#guru-form button {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+#siswa-form input:focus,
+#siswa-form select:focus,
+#guru-form input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.4);
+    outline: none;
+}
+
+#siswa-form button,
+#guru-form button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#siswa-form button:hover,
+#guru-form button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* ===== Search Bar ===== */
+.search-box {
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.search-box input {
+    padding: 10px 15px;
+    width: 260px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.search-box input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 3px 12px rgba(106, 17, 203, 0.4);
+}
+
+/* ===== Tabel ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f7ff;
+}
+
+/* ===== Tombol Aksi ===== */
+.actions button {
+    margin-right: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* ===== Tombol Tambah Data  ===== */
+.add-btn {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+/* ===== Tombol Dark Mode Toggle ===== */
+.dark-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 8px 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.dark-toggle:hover {
+    background: #555;
+}
+
+/* ===== Dark Mode Style ===== */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .container {
+    background: #1e1e1e;
+    color: #f1f1f1;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.05);
+}
+
+body.dark table {
+    border-color: #333;
+}
+
+body.dark th {
+    background: linear-gradient(135deg, #444, #666);
+}
+
+body.dark tr:nth-child(even) {
+    background: #222;
+}
+
+body.dark tr:hover {
+    background: #2d2d2d;
+}
+
+body.dark input,
+body.dark select {
+    background: #2d2d2d;
+    border: 1px solid #555;
+    color: #fff;
+}
+
+body.dark input:focus,
+body.dark select:focus {
+    border-color: #9face6;
+    box-shadow: 0 0 6px rgba(159, 172, 230, 0.6);
+}
+
+body.dark .add-btn {
+    background: linear-gradient(135deg, #20c997, #198754);
+}
+
+body.dark .edit-btn {
+    background-color: #e0a800;
+    color: #000;
+}
+
+body.dark .delete-btn {
+    background-color: #c82333;
+}
+body.dark .dark-toggle {
+    background: #f1f1f1;
+    color: #333;
+}
+
+/* ====== THEME STYLES ====== */
+body {
+  transition: background 0.3s, color 0.3s;
+}
+
+body.light {
+  background: #f4f4f9;
+  color: #333;
+}
+
+body.dark {
+  background: #1e1e2f;
+  color: #f5f5f5;
+}
+
+/* Container adaptif */
+body.dark .container {
+  background: #2b2b3c;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+body.light .container {
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ====== TABLE STYLES ====== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  transition: background 0.3s, color 0.3s;
+}
+
+th {
+  font-weight: 600;
+}
+
+body.light th {
+  background: #eaeaea;
+  color: #333;
+}
+
+body.dark th {
+  background: #3a3a4d;
+  color: #fff;
+}
+
+body.light tr:nth-child(even) {
+  background: #fafafa;
+}
+
+body.dark tr:nth-child(even) {
+  background: #2e2e42;
+}
+
+tr:hover {
+  background: rgba(100, 149, 237, 0.2);
+  transition: 0.3s;
+}
+
+/* ====== BUTTON STYLES ====== */
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.edit-btn {
+  background: #ffc107;
+  color: #222;
+}
+
+.edit-btn:hover {
+  background: #e0a800;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #b02a37;
+}
+
+/* Search Bar */
+.search-bar {
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-bar input {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 250px;
+  transition: border 0.3s, background 0.3s;
+}
+
+body.dark .search-bar input {
+  background: #3a3a4d;
+  border: 1px solid #666;
+  color: white;
+}
+body.light .search-bar input {
+  background: white;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.aesthetic-h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #49939e;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 22px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font: bold 22px 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #49939e;
+    padding-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #74ebd5, #9face6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.aesthetic-h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #49939e;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 28px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font: bold 28px 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #49939e;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #74ebd5, #9face6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeIn 1s ease-in-out;
+}
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1, h2 {
+        font-size: 20px;
+    }
+
+    #siswa-form input,
+    #siswa-form select,
+    #siswa-form button,
+    #guru-form input,
+    #guru-form button {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    th, td {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+}

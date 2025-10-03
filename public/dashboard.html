@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <button id="toggle-dark" class="dark-toggle">🌙 Dark Mode</button>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+      color: #333;
+    }
+    .dashboard {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      width: 220px;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.25);
+    }
+    .card h2 {
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      color: #444;
+    }
+    .card a {
+      text-decoration: none;
+      color: white;
+      background: #6a11cb;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .card a:hover {
+      opacity: 0.85;
+    }
+    button.logout {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: crimson;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button.logout:hover {
+      background: darkred;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h1>✨ Selamat Datang di Dashboard ✨</h1>
+    <div class="card-container">
+      <div class="card">
+        <h2>CRUD Siswa</h2>
+        <a href="index-siswa.html">Masuk</a>
+      </div>
+      <div class="card">
+        <h2>CRUD Guru</h2>
+        <a href="index-guru.html">Masuk</a>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="logout()" class="logout">Logout</button>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (localStorage.getItem("isLoggedIn") !== "true") {
+        window.location.href = "/login.html";
+      }
+    });
+
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "/login.html";
+    }
+  </script>
+  <script src="theme.js"></script>
+</body>
+</html>

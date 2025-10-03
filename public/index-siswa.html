@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Data Siswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<button id="toggle-dark" class="dark-toggle">🌙 Dark Mode</button>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<body>
+    <div class="container">
+        <h1>Data Siswa</h1>
+        <form id="siswa-form">
+            <h2 class="aesthetic-h2">Tambah/Edit Siswa </h2>
+            <input type="text" id="nis" placeholder="NIS" required>
+            <input type="text" id="nama-siswa" placeholder="Nama Siswa" required>
+            <input type="date" id="tanggal-lahir">
+            <input type="text" id="alamat" placeholder="Alamat">
+            <select id="id-kelas"></select>
+            <button type="submit" id="submit-btn">Tambah</button>
+        </form>
+
+<div class="search-box">
+  <input type="text" id="search-siswa" placeholder="🔍 Cari siswa...">
+</div>
+
+        <table id="siswa-table">
+            <thead>
+                <tr>
+                    <th>NIS</th>
+                    <th>Nama</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Alamat</th>
+                    <th>Kelas</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="siswa-list">
+            </tbody>
+        </table>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <script src="siswa-script.js"></script>
+    <script src="theme.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manajemen Data Guru</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<button id="toggle-dark" class="dark-toggle">🌙 Dark Mode</button>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<body>
+  <div class="container">
+    <h1>Data Guru</h1>
+    <form id="guru-form">
+      <h2 class="aesthetic-h2">Tambah/Edit Guru </h2>
+      <input type="hidden" id="id-guru">
+      <input type="text" id="nama-guru" placeholder="Nama Guru" required>
+      <input type="text" id="kontak" placeholder="Kontak">
+      <input type="text" id="alamat" placeholder="Alamat">
+      <button type="submit" id="submit-btn">Tambah</button>
+    </form>
+
+<div class="search-box">
+  <input type="text" id="search-siswa" placeholder="🔍 Cari siswa...">
+</div>
+
+    <table id="guru-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nama</th>
+          <th>Kontak</th>
+          <th>Alamat</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="guru-list">
+      </tbody>
+    </table>
+
+    <button onclick="logout()">Logout</button>
+  </div>
+  <script src="guru-script.js"></script>
+  <script src="theme.js"></script>
+</body>
+</html>
