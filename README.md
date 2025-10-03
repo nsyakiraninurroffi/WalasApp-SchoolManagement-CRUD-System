@@ -29,7 +29,7 @@
 |--------------|-------------------|
 | Backend      | PHP Native        |
 | Database     | MySQL             |
-| Frontend     | HTML, CSS, Bootstrap |
+| Frontend     | HTML, CSS         |
 | PDF Export   | FPDF Library      |
 
 ---
