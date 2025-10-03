@@ -38,4 +38,4 @@
 
 1. **Clone repository**
    ```bash
-   git clone https://github.com/nsyakiraninurroffi/walas-app.git
+   git clone https://github.com/nsyakiraninurroffi/WalasApp-SchoolManagement-CRUD-System.git
